@@ -1,51 +1,31 @@
 package org.example;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+public class AppTest {
+        @Test
+        public void testMin() {
+            int[] numbers = {4, 7, 2, 9, 1};
+            assertEquals(1, NumberOperations._min(numbers));
+        }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+        @Test
+        public void testMax() {
+            int[] numbers = {4, 7, 2, 9, 1};
+            assertEquals(9, NumberOperations._max(numbers));
+        }
 
-    public void testMin() {
-        int[] numbers = {4, 7, 2, 9, 1};
-        assertEquals(1, NumberOperations._min(numbers));
-    }
+        @Test
+        public void testSum() {
+            int[] numbers = {4, 7, 2, 9, 1};
+            assertEquals(23, NumberOperations._sum(numbers));
+        }
 
-    public void testMax() {
-        int[] numbers = {4, 7, 2, 9, 1};
-        assertEquals(9, NumberOperations._max(numbers));
-    }
-
-    public void testSum() {
-        int[] numbers = {4, 7, 2, 9, 1};
-        assertEquals(23, NumberOperations._sum(numbers));
-    }
-
-    public void testMult() {
-        int[] numbers = {4, 7, 2};
-        assertEquals(56, NumberOperations._mult(numbers));
-    }
+        @Test
+        public void testMult() {
+            int[] numbers = {4, 7, 2};
+            assertEquals(56, NumberOperations._mult(numbers));
+        }
 
 }
